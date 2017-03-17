@@ -31,6 +31,7 @@ describe('TrailingSlash suite', () => {
     req.path += '/test/';
 
     middleware(req, res, next);
+    expect(next).to.not.have.been.called();
     expect(res.redirect).to.have.been.called.once;
     expect(res.redirect).to.have.been.called.with(301, '/test');
   });
@@ -40,6 +41,7 @@ describe('TrailingSlash suite', () => {
     req.path += '/test/';
 
     middleware(req, res, next);
+    expect(next).to.not.have.been.called();
     expect(res.redirect).to.have.been.called.once;
     expect(res.redirect).to.have.been.called.with(301, '/test?query=true&awesome=sauce');
   });
@@ -49,6 +51,7 @@ describe('TrailingSlash suite', () => {
     req.path += '/test/';
 
     middleware(req, res, next);
+    expect(next).to.not.have.been.called();
     expect(res.redirect).to.have.been.called.once;
     expect(res.redirect).to.have.been.called.with(301, '/test?query=true&awesome=sauce#/angular/is/shit');
   });
@@ -59,7 +62,7 @@ describe('TrailingSlash suite', () => {
 
     middleware(req, res, next);
     expect(res.redirect).to.not.have.been.called();
-    expect(next).to.have.been.called();
+    expect(next).to.have.been.called.once;
   });
 
   it('path without slash and with query', () => {
@@ -68,7 +71,7 @@ describe('TrailingSlash suite', () => {
 
     middleware(req, res, next);
     expect(res.redirect).to.not.have.been.called();
-    expect(next).to.have.been.called();
+    expect(next).to.have.been.called.once;
   });
 
   it('path without slash, with query and hash', () => {
@@ -77,6 +80,6 @@ describe('TrailingSlash suite', () => {
 
     middleware(req, res, next);
     expect(res.redirect).to.not.have.been.called();
-    expect(next).to.have.been.called();
+    expect(next).to.have.been.called.once;
   });
 });

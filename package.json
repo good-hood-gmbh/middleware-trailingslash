@@ -2,15 +2,11 @@
   "name": "middleware-trailingslash",
   "description": "ExpressJS middleware that redirects requests with trailing slashes to a clean one without it",
   "author": "Nebenan.de <max@nebenan.de>",
-
   "license": "MIT",
   "readmeFilename": "README.md",
-
   "repository": "good-hood-gmbh/middleware-trailingslash",
   "bugs": "https://github.com/good-hood-gmbh/middleware-trailingslash/issues",
-
-  "version": "0.0.1",
-
+  "version": "1.0.0",
   "keywords": [
     "express",
     "expressjs",
@@ -18,26 +14,20 @@
     "slash",
     "trailing"
   ],
-
   "main": "index.js",
   "engines": {
-    "node": "^6.x.x"
+    "node": "^8.x.x || ^10.x.x"
   },
-
   "scripts": {
     "test": "env TZ='Europe/Berlin' mocha || exit 0"
   },
-
   "devDependencies": {
-    "eslint": "3.17.1",
-    "eslint-config-airbnb-base": "11.1.1",
-    "eslint-plugin-import": "2.2.0",
-
-    "mocha": "3.2.0",
-    "chai": "3.5.0",
-    "chai-spies": "0.7.1"
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "chai": "^4.2.0",
+    "sinon": "^7.1.1"
   },
-
-  "dependencies": {
-  }
+  "dependencies": {}
 }
